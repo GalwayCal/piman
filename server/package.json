@@ -1,0 +1,24 @@
+{
+  "name": "piman-server",
+  "version": "1.0.0",
+  "description": "PiMan Backend Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "sequelize": "^6.32.1",
+    "socket.io": "^4.8.1",
+    "sqlite3": "^5.1.6",
+    "ssh2": "^1.16.0",
+    "winston": "^3.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

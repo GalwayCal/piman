@@ -1,0 +1,20 @@
+[Unit]
+Description=PiMan GitHub Webhook Server
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/piman
+Environment="WEBHOOK_SECRET=your-webhook-secret-here"
+Environment="WEBHOOK_PORT=9000"
+ExecStart=/usr/bin/node /root/piman/webhook-server.js
+Restart=always
+RestartSec=10
+StandardOutput=append:/root/piman/webhook.log
+StandardError=append:/root/piman/webhook.log
+
+[Install]
+WantedBy=multi-user.target
+

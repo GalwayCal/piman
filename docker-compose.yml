@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  piman:
+    build: .
+    network_mode: host
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    volumes:
+      - piman_data:/app/data
+      - piman_logs:/app/server/logs
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - DB_PATH=/app/data/database.sqlite
+      - ENCRYPTION_KEY=YOUR_GENERATED_KEY_HERE
+    restart: unless-stopped
+    container_name: piman
+
+volumes:
+  piman_data:
+    driver: local
+  piman_logs:
+    driver: local
