@@ -14,7 +14,7 @@ if ! command -v docker &> /dev/null; then
 fi
 
 # Check if Docker Compose is installed
-if ! command -v docker-compose &> /dev/null; then
+if ! command -v docker compose &> /dev/null; then
     echo "ERROR: Docker Compose is not installed. Please install Docker Compose first:"
     echo "   https://docs.docker.com/compose/install/"
     exit 1
@@ -33,7 +33,7 @@ echo "Building and starting PiMan..."
 echo "   This may take a few minutes on first run..."
 
 # Build and start the containers
-docker-compose up -d --build
+docker compose up -d --build
 
 if [ $? -eq 0 ]; then
     echo ""
@@ -43,13 +43,13 @@ if [ $? -eq 0 ]; then
     echo "Default login: admin@piman.com / admin123"
     echo ""
     echo "Useful commands:"
-    echo "   View logs:     docker-compose logs -f"
-    echo "   Stop PiMan:    docker-compose down"
-    echo "   Restart:       docker-compose restart"
+    echo "   View logs:     docker compose logs -f"
+    echo "   Stop PiMan:    docker compose down"
+    echo "   Restart:       docker compose restart"
     echo ""
     echo "Full documentation: DOCKER_INSTALL.md"
 else
     echo "ERROR: Failed to start PiMan. Check the logs:"
-    echo "   docker-compose logs"
+    echo "   docker compose logs"
     exit 1
 fi
