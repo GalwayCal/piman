@@ -42,10 +42,11 @@ git clone https://github.com/GalwayCal/piman.git && cd piman && ./install.sh
 ```bash
 git clone https://github.com/GalwayCal/piman.git
 cd piman
-docker-compose up -d
+docker compose up -d
 ```
 
 Open `http://localhost:3000` and login with `admin@piman.com` / `admin123`
+Update Encryption Key in docker-compose before first use
 
 **[Complete Docker Guide](DOCKER_INSTALL.md)** - Full instructions and troubleshooting  
 **[Auto-Update Guide](AUTO_UPDATE.md)** - Set up automatic updates from GitHub  
